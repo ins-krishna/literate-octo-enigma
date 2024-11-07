@@ -224,3 +224,36 @@ a {
 .next-steps-section {
   margin-top: var(--g-spacing-2x-large);
 }
+.header-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vh; /* Center vertically within viewport */
+}
+
+.btn-copy {
+  display: flex;
+  align-items: center;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-copy:hover {
+  background-color: #e2e2e2;
+}
+
+.clipboard-icon {
+  margin-right: 8px;
+  font-size: 20px;
+}
+
+.btn-copy.copied {
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+  color: #155724;
+}

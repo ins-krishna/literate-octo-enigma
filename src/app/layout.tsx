@@ -1,11 +1,12 @@
 import "./globals.css";
 import {
   getKindeServerSession,
-  RegisterLink,
+  // RegisterLink,
   LoginLink,
   LogoutLink,
 } from "@kinde-oss/kinde-auth-nextjs/server";
 import Link from "next/link";
+import Header from "./Header";
 
 export const metadata = {
   title: "Kinde Auth",
@@ -25,7 +26,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               {!isAuthenticated() ? (
                 <>
                   <LoginLink className="btn btn-ghost sign-in-btn">Sign in</LoginLink>
-                  <RegisterLink className="btn btn-dark">Sign up</RegisterLink>
                 </>
               ) : (
                 <div className="profile-blob">
@@ -46,7 +46,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     <p className="text-heading-2">
                       {user?.given_name} {user?.family_name}
                     </p>
-
                     <LogoutLink className="text-subtle">Log out</LogoutLink>
                   </div>
                 </div>
@@ -55,6 +54,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </nav>
         </header>
         <main>{children}</main>
+        <Header />
         <footer className="footer">
           <div className="container">
             <strong className="text-heading-2">KindeAuth</strong>
